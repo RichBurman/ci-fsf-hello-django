@@ -1,1 +1,1 @@
-web: gunicorn CI-FSF-HELLO-DJANGO.wsgi:application
+web: gunicorn django_todo.wsgi:application
