@@ -3,9 +3,6 @@ from .models import Item
 from .forms import ItemForm
 
 
-# Create your views here.
-
-
 def get_todo_list(request):
     items = Item.objects.all()
     context = {
@@ -20,7 +17,6 @@ def add_item(request):
         if form.is_valid():
             form.save()
             return redirect('get_todo_list')
-
     form = ItemForm()
     context = {
         'form': form
@@ -42,7 +38,7 @@ def edit_item(request, item_id):
     return render(request, 'todo/edit_item.html', context)
 
 
-def toogle_item(request, item_id):
+def toggle_item(request, item_id):
     item = get_object_or_404(Item, id=item_id)
     item.done = not item.done
     item.save()
