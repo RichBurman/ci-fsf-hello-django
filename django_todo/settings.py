@@ -30,7 +30,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 if os.path.isfile('env.py'):
     import env
 
-SECRET_KEY = os.environ.get('SECRET_KEY', '---sercetkeyvalue---')
+SECRET_KEY = os.environ.get('SECRET_KEY', '')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = development
@@ -40,8 +40,6 @@ if development:
         'localhost', '8000-richburman-ci-fsf-hello-c4xg6u1ojc.us2.codeanyapp.com']
 else:
     ALLOWED_HOSTS = [os.environ.get('HEROKU_HOSTNAME')]
-
-
 
 
 # Application definition
